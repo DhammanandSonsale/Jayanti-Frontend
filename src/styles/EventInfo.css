@@ -29,6 +29,8 @@
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: var(--shadow);
+  border: 1px solid rgb(220, 220, 220);
+
 }
 
 .info-card:hover {

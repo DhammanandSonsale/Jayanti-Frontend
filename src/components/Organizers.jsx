@@ -4,46 +4,32 @@ function Organizers() {
   const organizers = [
     {
       id: 1,
-      name: "Rahul Patil",
+      name: "abhi",
       designation: "Adhyaksh (President)",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
-      contact: "rahulpatil@example.com",
+      image: "/assets/profile.png",
+      contact: "abhi.sonsale@example.com",
     },
     {
       id: 2,
-      name: "Sneha Deshmukh",
+      name: "sumo",
       designation: "Up-Adhyaksh (Vice President)",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
-      contact: "snehadeshmukh@example.com",
+      image: "/assets/profile.png",
+      contact: "lakhan.sonsale@example.com",
     },
     {
       id: 3,
-      name: "Amit Pawar",
+      name: "Amit",
       designation: "Sachiv (Secretary)",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+      image: "/assets/profile.png",
       contact: "amitpawar@example.com",
     },
     {
       id: 4,
-      name: "Neha Shinde",
+      name: "kiran",
       designation: "Up-Sachiv (Joint Secretary)",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+      image: "/assets/profile.png",
       contact: "nehashinde@example.com",
-    },
-    {
-      id: 5,
-      name: "Pravin Jadhav",
-      designation: "Koshadhyaksh (Treasurer)",
-      image: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=150&h=150&fit=crop",
-      contact: "pravin@example.com",
-    },
-    {
-      id: 6,
-      name: "Pooja Kale",
-      designation: "Mahila Pramukh (Women’s Head)",
-      image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150&h=150&fit=crop",
-      contact: "pooja@example.com",
-    },
+    }
   ]
 
   return (
