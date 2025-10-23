@@ -1,0 +1,40 @@
+.admin-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f7f9fc;
+}
+
+.admin-login h1 {
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.admin-login form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  gap: 10px;
+}
+
+.admin-login input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.admin-login button {
+  background: #1e3a8a;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}

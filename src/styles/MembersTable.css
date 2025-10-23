@@ -1,0 +1,75 @@
+.table-container {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.members-table thead {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.members-table th {
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.members-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-dark);
+}
+
+.members-table tbody tr:hover {
+  background-color: var(--light-gray);
+}
+
+.members-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+}
+
+.no-data {
+  text-align: center;
+  color: var(--text-light);
+  padding: 2rem !important;
+}
+
+@media (max-width: 768px) {
+  .members-table {
+    font-size: 0.85rem;
+  }
+
+  .members-table th,
+  .members-table td {
+    padding: 0.75rem;
+  }
+
+  .btn-delete {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
