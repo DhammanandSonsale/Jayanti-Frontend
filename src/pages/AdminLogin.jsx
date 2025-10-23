@@ -1,36 +1,45 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import "../styles/AdminLogin.css"
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/AdminLogin.css";
 
 function AdminLogin() {
-  const navigate = useNavigate()
-  const [userId, setUserId] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
+  const navigate = useNavigate();
+  const [userId, setUserId] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    // If already logged in, go to dashboard
     if (localStorage.getItem("isAdmin") === "true") {
-      navigate("/admin")
+      navigate("/admin");
     }
-  }, [navigate])
+  }, [navigate]);
 
-  const handleLogin = (e) => {
-    e.preventDefault()
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError(""); // clear previous error
 
-    // ✅ Set your admin credentials here
-    const ADMIN_ID = Process.env.ADMIN_NAME;
-    const ADMIN_PASS = Process.env.ADMIN_PASSWORD;
+    try {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/admin-login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId, password }),
+      });
 
-    if (userId === ADMIN_ID && password === ADMIN_PASS) {
-      localStorage.setItem("isAdmin", "true")
-      navigate("/admin")
-    } else {
-      setError("Invalid ID or password")
+      const data = await res.json();
+
+      if (data.success) {
+        localStorage.setItem("isAdmin", "true");
+        navigate("/admin");
+      } else {
+        setError(data.message || "Invalid ID or password");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Server error, please try again later");
     }
-  }
+  };
 
   return (
     <div className="admin-login">
@@ -52,7 +61,7 @@ function AdminLogin() {
       </form>
       {error && <p className="error">{error}</p>}
     </div>
-  )
+  );
 }
 
-export default AdminLogin
+export default AdminLogin;
