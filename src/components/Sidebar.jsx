@@ -15,14 +15,6 @@ function Sidebar() {
       <div className="sidebar-header">
         <h2>Admin Panel</h2>
       </div>
-      <nav className="sidebar-nav">
-        <Link to="/dashboard" className="sidebar-link active">
-          📊 Dashboard
-        </Link>
-        <Link to="/dashboard" className="sidebar-link">
-          👥 Paid Members
-        </Link>
-      </nav>
       <button 
       className="logout-btn" 
       onClick={handleLogout}>

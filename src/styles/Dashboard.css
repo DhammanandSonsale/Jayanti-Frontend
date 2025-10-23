@@ -1,11 +1,13 @@
 .dashboard {
   display: flex;
+  flex-wrap: wrap;
   min-height: 100vh;
   background-color: var(--light-gray);
   gap: 2rem;
   padding: 2rem;
 }
 
+/* Left Panel */
 .dashboard-left {
   flex: 0 0 300px;
   background: var(--white);
@@ -15,20 +17,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 250px;
 }
 
 .organization-details h2 {
   color: var(--primary-blue);
   font-size: 1.5rem;
-  margin-bottom: 0.75rem; /* space below heading */
+  margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .organization-details p {
   font-size: 1rem;
-  margin-bottom: 0.5rem; /* space between paragraphs */
-  line-height: 1.6; /* optional: improves readability */
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  text-align: center;
 }
-
 
 .qr-code {
   margin-top: 2rem;
@@ -42,18 +46,21 @@
   border: 2px solid var(--primary-blue);
 }
 
+/* Right Panel */
 .dashboard-right {
   flex: 1;
   background: var(--white);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: var(--shadow);
+  min-width: 300px;
 }
 
 .dashboard-right h1 {
   color: var(--primary-blue);
   font-size: 1.8rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .table-container {
@@ -61,12 +68,13 @@
   background: var(--white);
   border-radius: 12px;
   box-shadow: var(--shadow);
-  overflow: hidden;
+  overflow-x: auto; /* allow horizontal scroll on small screens */
 }
 
 .members-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 400px; /* prevent too small table */
 }
 
 .members-table thead {
@@ -74,19 +82,19 @@
   color: var(--white);
 }
 
-.members-table th {
-  padding: 1.2rem;
+.members-table th,
+.members-table td {
+  padding: 0.8rem 1rem;
   text-align: left;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .members-table td {
-  padding: 1rem 1.2rem;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-dark);
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
   .dashboard {
     flex-direction: column;
@@ -96,14 +104,44 @@
   .dashboard-left,
   .dashboard-right {
     width: 100%;
+    padding: 1.5rem;
   }
 
+  .qr-code img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .dashboard-right h1 {
+    font-size: 1.5rem;
+  }
+
+  .members-table {
+    font-size: 0.85rem;
+  }
+
+  .members-table th,
+  .members-table td {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
   .qr-code img {
     width: 120px;
     height: 120px;
   }
 
+  .organization-details h2 {
+    font-size: 1.2rem;
+  }
+
   .dashboard-right h1 {
     font-size: 1.3rem;
+  }
+
+  .members-table {
+    min-width: 300px;
   }
 }
