@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "../styles/AdminLogin.css"
-import dotenv from "dotenv"
 
 function AdminLogin() {
   const navigate = useNavigate()
